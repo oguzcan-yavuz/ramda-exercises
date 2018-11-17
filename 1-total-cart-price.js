@@ -10,18 +10,12 @@ Usage
 
 const price = getTotalPrice(cart); // '$44.20'
 Your solution must be point-free.
-
-import {} from 'ramda';
-import cart from './cart';
-
-const getTotalPrice = () => {};
-
 */
 
 // ********** My Solution ********** 
 
 import { reduce, pipe, curry, flip, prop, add } from 'ramda';
-import cart from './cart';
+import cart from './cart-1';
 
 // const addPrice = (sum, cardObj) => sum + cardObj.price;
 const getPrice = prop('price');
@@ -50,7 +44,7 @@ console.log({ price });
 // ********** Their Solution #1 **********
 
 import { add, map, pipe, prop, reduce } from 'ramda';
-import cart from './cart';
+import cart from './cart-1';
 
 const toUSD = (amount) => amount.toLocaleString('en-US', {
   style: 'currency',
@@ -70,7 +64,7 @@ console.log({ result });
 // ********** Their Solution #2 **********
 
 import { add, pipe, pluck, sum } from 'ramda';
-import cart from './cart';
+import cart from './cart-1';
 
 const toUSD = (amount) => amount.toLocaleString('en-US', {
   style: 'currency',
