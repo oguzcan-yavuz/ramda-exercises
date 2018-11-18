@@ -43,7 +43,7 @@ This finds the best $20 or less vegetarian/lactose-free meal. All it needs is a 
 // ********** My Solution **********
 
 const { pipe, filter, sort, descend, take, gte, where, prop, uncurryN } = require('ramda')
-const menu = require('./menu.js')
+const menu = require('./data/menu.js')
 
 const createMaxPriceFilter = (maxPrice) => filter(
   where({

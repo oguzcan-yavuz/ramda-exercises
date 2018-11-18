@@ -14,7 +14,7 @@ Your solution must be point-free.
 // ********** My Solution **********
 
 const { pipe, comparator, sort, head, prop } = require('ramda')
-const cart = require('./cart-2.js')
+const cart = require('./data/cart-2.js')
 
 const byPrice = comparator((a, b) => a.price < b.price)
 

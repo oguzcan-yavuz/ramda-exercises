@@ -18,7 +18,7 @@ The median’s $141,000?! Must be Google or Facebook employees…oh, by the way,
 // ********** My Solution **********
 
 const { filter, pipe, median, pluck, lte, propSatisfies } = require('ramda')
-const employees = require('./employees.js')
+const employees = require('./data/employees.js')
 
 
 const bySalary = propSatisfies(lte(100000), 'salary')

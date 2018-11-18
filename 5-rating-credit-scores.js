@@ -23,7 +23,7 @@ Your solution must be point-free.
 // ********** My Solution **********
 
 const { map, cond, gte, lte, flip, always } = require('ramda')
-const scores = require('./scores.json')
+const scores = require('./data/scores.json')
 
 
 const flippedGTE = flip(gte)
