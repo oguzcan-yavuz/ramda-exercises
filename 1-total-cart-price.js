@@ -14,7 +14,7 @@ Your solution must be point-free.
 
 // ********** My Solution **********
 
-const { reduce, pipe, prop, add} = require('ramda')
+const { reduce, pipe, prop, add } = require('ramda')
 const cart = require('./cart-1.js')
 
 // const addPrice = (sum, cardObj) => sum + cardObj.price;
