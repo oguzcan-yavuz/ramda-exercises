@@ -13,8 +13,8 @@ Your solution must be point-free.
 
 // ********** My Solution **********
 
-import { pipe, comparator, sort, head, prop } from 'ramda'
-import cart from './cart-2.js'
+const { pipe, comparator, sort, head, prop } = require('ramda')
+const cart = require('./cart-2.js')
 
 const byPrice = comparator((a, b) => a.price < b.price)
 
@@ -30,16 +30,16 @@ console.log({ cheapestItem })
 
 // ********** Their Solution #1 **********
 
-import { head, pipe, prop, sortBy } from 'ramda';
-import cart from './cart-2.js';
-
-const getCheapestItem = pipe(
-  sortBy(prop('price')),
-  head,
-  prop('name')
-);
-
-const result = getCheapestItem(cart);
-
-console.log({ result });
+// import { head, pipe, prop, sortBy } from 'ramda';
+// import cart from './cart-2.js';
+//
+// const getCheapestItem = pipe(
+//   sortBy(prop('price')),
+//   head,
+//   prop('name')
+// );
+//
+// const result = getCheapestItem(cart);
+//
+// console.log({ result });
 

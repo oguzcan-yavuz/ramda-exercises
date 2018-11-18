@@ -1,4 +1,4 @@
-export default [{
+module.exports = [{
   name: 'apples',
   price: 2.49
 }, {

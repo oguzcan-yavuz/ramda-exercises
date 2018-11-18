@@ -12,10 +12,10 @@ const price = getTotalPrice(cart); // '$44.20'
 Your solution must be point-free.
 */
 
-// ********** My Solution ********** 
+// ********** My Solution **********
 
-import { reduce, pipe, curry, flip, prop, add } from 'ramda';
-import cart from './cart-1';
+const { reduce, pipe, prop, add} = require('ramda')
+const cart = require('./cart-1.js')
 
 // const addPrice = (sum, cardObj) => sum + cardObj.price;
 const getPrice = prop('price');
@@ -32,7 +32,7 @@ const getTotalPrice = pipe(
     console.log(`num after reduce: ${num}`);
     return num;
   },
-  
+
   adjustPrecision,
   convertNumToDollars
 );
@@ -43,41 +43,41 @@ console.log({ price });
 
 // ********** Their Solution #1 **********
 
-import { add, map, pipe, prop, reduce } from 'ramda';
-import cart from './cart-1';
-
-const toUSD = (amount) => amount.toLocaleString('en-US', {
-  style: 'currency',
-  currency: 'USD',
-});
-
-const getTotalPrice = pipe(
-  map(prop('price')),
-  reduce(add, 0),
-  toUSD
-);
-
-const result = getTotalPrice(cart);
-
-console.log({ result });
+// import { add, map, pipe, prop, reduce } from 'ramda';
+// import cart from './cart-1';
+//
+// const toUSD = (amount) => amount.toLocaleString('en-US', {
+//   style: 'currency',
+//   currency: 'USD',
+// });
+//
+// const getTotalPrice = pipe(
+//   map(prop('price')),
+//   reduce(add, 0),
+//   toUSD
+// );
+//
+// const result = getTotalPrice(cart);
+//
+// console.log({ result });
 
 // ********** Their Solution #2 **********
 
-import { add, pipe, pluck, sum } from 'ramda';
-import cart from './cart-1';
-
-const toUSD = (amount) => amount.toLocaleString('en-US', {
-  style: 'currency',
-  currency: 'USD',
-});
-
-const getTotalPrice = pipe(
-  pluck('price'),
-  sum,
-  toUSD
-);
-
-const result = getTotalPrice(cart);
-
-console.log({ result });
+// import { add, pipe, pluck, sum } from 'ramda';
+// import cart from './cart-1';
+//
+// const toUSD = (amount) => amount.toLocaleString('en-US', {
+//   style: 'currency',
+//   currency: 'USD',
+// });
+//
+// const getTotalPrice = pipe(
+//   pluck('price'),
+//   sum,
+//   toUSD
+// );
+//
+// const result = getTotalPrice(cart);
+//
+// console.log({ result });
 
